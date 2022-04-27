@@ -48,7 +48,7 @@ public class java_sql {
         //scan book id
         int book_id = sc.nextInt();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(url1);
             Connection connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connection is Successful to the database" + url);
             String query = String.format("Insert into Checkout(S_id,B_id, checkout_date) values( %d,%d,'%s')", student_id, book_id, cdate);
@@ -64,7 +64,7 @@ public class java_sql {
         System.out.println("List of Books: ");
         String books;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName(url1);
             Connection connection = DriverManager.getConnection(url, user, password);
             System.out.println("Connection is Successful to the database" + url);
             String query = "Select name from Books";
